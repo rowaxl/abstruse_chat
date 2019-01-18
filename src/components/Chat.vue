@@ -29,10 +29,6 @@ export default {
 
 
 <style>
-li.message {
-    display: block;
-    margin: 0 10px;
-}
 .input_bar {
     display: inline-block;
     width: 60vw;
