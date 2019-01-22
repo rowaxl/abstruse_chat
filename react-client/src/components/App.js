@@ -16,9 +16,9 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{ width:"80vw", margin:"auto" }}>
                 <div>Chat area</div>
-                <div className="ui container">
+                <div className="ui container" style={{ height: "80vh", position: "absolute", top: "5%" }}>
                     {this.state.messages}
                 </div>
                 <InputForm onSubmit={this.onMessageSubmit}/>

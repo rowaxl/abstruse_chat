@@ -8,19 +8,26 @@ class InputForm extends React.Component {
 
     state = { message: '' };
 
+    onChange = event => {
+        console.log(this.state);
+        this.setState({ message: event.target.value });
+    }
+
     onFormSubmit = event => {
         event.preventDefault();
         this.props.onSubmit(this.state.message);
+        this.setState({ message: "" });
     }
 
     render() {
         return (
-            <div className="ui segment" style={{ bottom: "5%", width: "80vw" }}>
+            <div className="ui segment" style={{ position:"absolute", bottom: "5%", width: "80vw" }}>
                 <form className="ui form" onSubmit={this.onFormSubmit}>
                     <div className="field">
                         <label>Input Message</label>
                         <input type="text"
-                            onChange={ e => this.setState({ message: e.target.value })} />
+                            value={this.state.message}
+                            onChange={this.onChange} />
                     </div>
                 </form>
             </div>
