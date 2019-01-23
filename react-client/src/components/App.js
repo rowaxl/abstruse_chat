@@ -2,10 +2,16 @@ import React from 'react';
 import InputForm from './InputForm';
 
 class App extends React.Component {
-    state = { messages: [] }
+    state = {
+        username: 'unknown',
+        messages: []
+    }
 
     onMessageSubmit = (text) => {
-        const newMessage = <li key={this.state.messages.length}>{text}</li>;
+        const newMessage =
+            <li key={this.state.messages.length}>
+                {this.state.username}: {text}
+            </li>;
         const log = this.state.messages;
 
         log.push(newMessage);
