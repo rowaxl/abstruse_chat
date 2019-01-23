@@ -1,14 +1,18 @@
-/* eslint-disable */
 <template>
-  <div id="app">
-    <router-view/>
+  <div id="app" class="ui container">
+    <HelloWorld title="WELCOME TO ABSTURSE CHAT"/>
   </div>
 </template>
 
 <script>
+import HelloWorld from './components/HelloWorld.vue'
+
 export default {
-    name: 'App',
-};
+  name: 'app',
+  components: {
+    HelloWorld
+  }
+}
 </script>
 
 <style>
@@ -18,6 +22,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: auto;
+  height: 80vh;
+  position: absolute;
+  top: 5%;
 }
 </style>
