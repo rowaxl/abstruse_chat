@@ -3,7 +3,11 @@
     <h2>{{ title }}</h2>
     <div>
       <ul>
-        <li v-for="message in messages">{{ message }}</li>
+        <li
+          v-for="message in messages"
+          v-bind:key=message.id>
+          {{ message }}
+        </li>
       </ul>
     </div>
     <div class="ui segment input_bar">
@@ -23,14 +27,15 @@ export default {
   props: {
     title: String
   },
-  data: {
-    messages: ['message1', 'message2'],
-    newMessage: ''
+  data: function() {
+    return {
+      messages: ['message1', 'message2'],
+      newMessage: ''
+    }
   },
   methods: {
-    addMessage: (e) => {
-      console.log('this ', this);
-      this.message.push(this.newMessage);
+    addMessage: function() {
+      this.messages.push(this.newMessage);
       this.newMessage = '';
     }
   }
@@ -46,7 +51,7 @@ ul {
   padding: 0;
 }
 li {
-  display: inline-block;
+  display: block;
   margin: 0 10px;
 }
 a {
