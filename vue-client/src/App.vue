@@ -23,8 +23,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin: auto;
+  width: 100vw;
   height: 80vh;
   position: absolute;
   top: 5%;
+}
+body {
+  background: #000;
 }
 </style>
